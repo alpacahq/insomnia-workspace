@@ -1,0 +1,1826 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-12-12T22:22:29.264Z",
+	"__export_source": "insomnia.desktop.app:v6.2.3",
+	"resources": [
+		{
+			"_id": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"created": 1540589831486,
+			"description": "# alpaca.markets API\n\nThis workspace allows you to test and debug calls to Alpaca's REST web brokerage API.",
+			"modified": 1540844913004,
+			"name": "Alpaca API",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_c8fb7ec53cef446f85494eeb7b925ebc",
+			"color": null,
+			"created": 1540589832659,
+			"data": {
+				"api_key": "",
+				"api_secret": "",
+				"api_subdomain": "paper-api",
+				"api_url": "https://{{ api_subdomain  }}.alpaca.markets/{{ api_version  }}",
+				"api_version": "v1",
+				"content_type": "application/json",
+				"data_api_url": "https://data.alpaca.markets/{{ api_version  }}"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1540589832659,
+			"modified": 1544653051363,
+			"name": "New Environment",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_307c772a0d8f426286e01fe6541f8595",
+			"cookies": [],
+			"created": 1540589832727,
+			"modified": 1540589832727,
+			"name": "Default Jar",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_881f9797a4704f61b958785a9aa53727",
+			"created": 1540672329350,
+			"description": "",
+			"environment": {
+				"direction": {
+					"ascending": "asc",
+					"descending": "desc"
+				},
+				"limit_price": {
+					"limit": "limit",
+					"stop_limit": "stop_limit"
+				},
+				"side": {
+					"buy": "buy",
+					"sell": "sell"
+				},
+				"status": {
+					"all": "all",
+					"closed": "closed",
+					"open": "open"
+				},
+				"stop_price": {
+					"stop": "stop",
+					"stop_limit": "stop_limit"
+				},
+				"time_in_force": {
+					"at_market_open": "opg",
+					"day": "day",
+					"fill_or_kill": "fok",
+					"fill_or_kill_partial": "ioc",
+					"good_until_canceled": "gtc"
+				},
+				"type": {
+					"limit": "limit",
+					"market": "market",
+					"stop": "stop",
+					"stop_limit": "stop_Limit"
+				}
+			},
+			"metaSortKey": -1540672329350,
+			"modified": 1540674057526,
+			"name": "Orders",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_f336c7586b984d0aab72c53579befa3f",
+			"created": 1540674198213,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1537143953584,
+			"modified": 1540674533873,
+			"name": "Positions",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_8384a7ad0bf34376841a8cd2737747e2",
+			"created": 1540674339926,
+			"description": "",
+			"environment": {
+				"asset_class": {
+					"us_equity": "us_equity"
+				},
+				"status": {
+					"active": "active"
+				}
+			},
+			"metaSortKey": -1535379765701,
+			"modified": 1540674925430,
+			"name": "Assets",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_1754c48a05924784b339810320aae20f",
+			"created": 1540674778324,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540672329400,
+			"modified": 1540674821470,
+			"name": "Account",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_abf94133f0d44f14a90715c80060d3b5",
+			"created": 1540674962986,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1534497671759.5,
+			"modified": 1540674981038,
+			"name": "Calendar",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_1426470d694942b89c926768c1c14434",
+			"created": 1540675010592,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1534056624788.75,
+			"modified": 1540675015469,
+			"name": "Clock",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_bd91226f677e4325abebe1ced729b0f3",
+			"created": 1540675972948,
+			"description": "",
+			"environment": {
+				"api_url": "https://api.polygon.io/{{ api_version  }}",
+				"api_version": "v1"
+			},
+			"metaSortKey": -1533836101303.375,
+			"modified": 1540676036713,
+			"name": "Market Data",
+			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_44c2adbc855d4a8d8860f603fa81313f",
+			"color": "#c0c0c0",
+			"created": 1540655069527,
+			"data": {
+				"api_key": "YOUR-PAPER-KEY",
+				"api_secret": "YOUR-PAPER-SECRET",
+				"api_subdomain": "paper-api"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1540655069527,
+			"modified": 1544652757991,
+			"name": "Paper Trading",
+			"parentId": "env_c8fb7ec53cef446f85494eeb7b925ebc",
+			"_type": "environment"
+		},
+		{
+			"_id": "env_7759830dd5de4993aa9b0d6aa284cef8",
+			"color": "#008000",
+			"created": 1540655107509,
+			"data": {
+				"api_key": "YOUR-LIVE-KEY",
+				"api_secret": "YOUR-LIVE-SECRET",
+				"api_subdomain": "api"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1540655107509,
+			"modified": 1544652756770,
+			"name": "Live Trading",
+			"parentId": "env_c8fb7ec53cef446f85494eeb7b925ebc",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_d68c5d8a0e3641f388121b67d6c98f76",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"symbol\": \"AAPL\",\n\t\"qty\": 10,\n\t\"side\": \"{{ side.buy  }}\",\n\t\"type\": \"{{ type.limit  }}\",\n\t\"limit_price\": \"220.00\",\n\t\"time_in_force\": \"{{ time_in_force.fill_or_kill  }}\"\n}"
+			},
+			"created": 1540589871623,
+			"description": "Places a new order for the given account. An order request may be rejected if the account is not authorized for trading, or if the tradable balance is insufficient to fill the order.\n\n### Example Response\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"created_at\": \"2018-10-05T05:48:59Z\",\n  \"updated_at\": \"2018-10-05T05:48:59Z\",\n  \"submitted_at\": \"2018-10-05T05:48:59Z\",\n  \"filled_at\": \"2018-10-05T05:48:59Z\",\n  \"expired_at\": \"2018-10-05T05:48:59Z\",\n  \"canceled_at\": \"2018-10-05T05:48:59Z\",\n  \"failed_at\": \"2018-10-05T05:48:59Z\",\n  \"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"symbol\": \"AAPL\",\n  \"exchange\": \"NASDAQ\",\n  \"asset_class\": \"us_equity\",\n  \"qty\": \"15\",\n  \"filled_qty\": \"0\",\n  \"type\": \"market\",\n  \"side\": \"buy\",\n  \"time_in_force\": \"day\",\n  \"limit_price\": \"107.00\",\n  \"stop_price\": \"106.00\",\n  \"filled_avg_price\": \"106.00\",\n  \"status\": \"accepted\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871623,
+			"method": "POST",
+			"modified": 1544651551892,
+			"name": "Place Buy Order",
+			"parameters": [
+				{
+					"id": "pair_4a99a8648cc44d69934a526eca463321",
+					"name": "status",
+					"value": "{{ status.all  }}"
+				},
+				{
+					"disabled": false,
+					"id": "pair_83e9c60cb9524aee81b175989e6180fd",
+					"name": "direction",
+					"value": "{{ direction.descending  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_f9d3908f621f4983bc5bd3b10fb26c88",
+					"name": "limit",
+					"value": "50"
+				},
+				{
+					"disabled": true,
+					"id": "pair_c1a0338a1a2b496a82d73bfa8986cb02",
+					"name": "after",
+					"value": "{% now 'iso-8601', '' %}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_496149e3c2b243c59c8978415d0d73ae",
+					"name": "until",
+					"value": "{% now 'iso-8601', '' %}"
+				}
+			],
+			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3f5fa4d19c904b8c9788aebf081b81b8",
+			"authentication": {},
+			"body": {},
+			"created": 1540673223772,
+			"description": "### Example Response\n```\n[\n\t{\n\t\t\"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"created_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"updated_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"submitted_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"filled_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"expired_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"canceled_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"failed_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"symbol\": \"AAPL\",\n\t\t\"exchange\": \"NASDAQ\",\n\t\t\"asset_class\": \"us_equity\",\n\t\t\"qty\": \"15\",\n\t\t\"filled_qty\": \"0\",\n\t\t\"type\": \"market\",\n\t\t\"side\": \"buy\",\n\t\t\"time_in_force\": \"day\",\n\t\t\"limit_price\": \"107.00\",\n\t\t\"stop_price\": \"106.00\",\n\t\t\"filled_avg_price\": \"106.00\",\n\t\t\"status\": \"accepted\"\n\t}\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871673,
+			"method": "GET",
+			"modified": 1541538749591,
+			"name": "List All Orders",
+			"parameters": [
+				{
+					"id": "pair_4a99a8648cc44d69934a526eca463321",
+					"name": "status",
+					"value": "{{ status.all  }}"
+				},
+				{
+					"disabled": false,
+					"id": "pair_83e9c60cb9524aee81b175989e6180fd",
+					"name": "direction",
+					"value": "{{ direction.descending  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_f9d3908f621f4983bc5bd3b10fb26c88",
+					"name": "limit",
+					"value": "50"
+				},
+				{
+					"disabled": true,
+					"id": "pair_c1a0338a1a2b496a82d73bfa8986cb02",
+					"name": "after",
+					"value": "{% now 'iso-8601', '' %}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_496149e3c2b243c59c8978415d0d73ae",
+					"name": "until",
+					"value": "{% now 'iso-8601', '' %}"
+				}
+			],
+			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b3f7343de29f4cad9b772d2cd1e3414f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"symbol\": \"AAPL\",\n\t\"qty\": 10,\n\t\"side\": \"{{ side.sell  }}\",\n\t\"type\": \"{{ type.limit  }}\",\n\t\"limit_price\": \"220.00\",\n\t\"time_in_force\": \"{{ time_in_force.fill_or_kill  }}\"\n}"
+			},
+			"created": 1540673374484,
+			"description": "Places a new order for the given account. An order request may be rejected if the account is not authorized for trading, or if the tradable balance is insufficient to fill the order.\n\n### Example Response\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"created_at\": \"2018-10-05T05:48:59Z\",\n  \"updated_at\": \"2018-10-05T05:48:59Z\",\n  \"submitted_at\": \"2018-10-05T05:48:59Z\",\n  \"filled_at\": \"2018-10-05T05:48:59Z\",\n  \"expired_at\": \"2018-10-05T05:48:59Z\",\n  \"canceled_at\": \"2018-10-05T05:48:59Z\",\n  \"failed_at\": \"2018-10-05T05:48:59Z\",\n  \"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"symbol\": \"AAPL\",\n  \"exchange\": \"NASDAQ\",\n  \"asset_class\": \"us_equity\",\n  \"qty\": \"15\",\n  \"filled_qty\": \"0\",\n  \"type\": \"market\",\n  \"side\": \"buy\",\n  \"time_in_force\": \"day\",\n  \"limit_price\": \"107.00\",\n  \"stop_price\": \"106.00\",\n  \"filled_avg_price\": \"106.00\",\n  \"status\": \"accepted\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539743601850,
+			"method": "POST",
+			"modified": 1541538759055,
+			"name": "Place Sell Order",
+			"parameters": [],
+			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3c9fb778c0d448aa9e474646b9e39e1d",
+			"authentication": {},
+			"body": {},
+			"created": 1540673577340,
+			"description": "### Example Response\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"created_at\": \"2018-10-05T05:48:59Z\",\n  \"updated_at\": \"2018-10-05T05:48:59Z\",\n  \"submitted_at\": \"2018-10-05T05:48:59Z\",\n  \"filled_at\": \"2018-10-05T05:48:59Z\",\n  \"expired_at\": \"2018-10-05T05:48:59Z\",\n  \"canceled_at\": \"2018-10-05T05:48:59Z\",\n  \"failed_at\": \"2018-10-05T05:48:59Z\",\n  \"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"symbol\": \"AAPL\",\n  \"exchange\": \"NASDAQ\",\n  \"asset_class\": \"us_equity\",\n  \"qty\": \"15\",\n  \"filled_qty\": \"0\",\n  \"type\": \"market\",\n  \"side\": \"buy\",\n  \"time_in_force\": \"day\",\n  \"limit_price\": \"107.00\",\n  \"stop_price\": \"106.00\",\n  \"filled_avg_price\": \"106.00\",\n  \"status\": \"accepted\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539743601800,
+			"method": "GET",
+			"modified": 1544651966398,
+			"name": "Get an Order",
+			"parameters": [],
+			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders/{order_id}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_28a8b3019d0047fb9a8dded96962afc8",
+			"authentication": {},
+			"body": {},
+			"created": 1540674129877,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1538474197165.5,
+			"method": "DELETE",
+			"modified": 1540845274912,
+			"name": "Cancel an Order",
+			"parameters": [],
+			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders/{order_id}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e78e8f7f575542afa023e7659fb85552",
+			"authentication": {},
+			"body": {},
+			"created": 1540674723995,
+			"description": "### Example Response\n```\n[\n\t{\n\t\t\"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"created_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"updated_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"submitted_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"filled_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"expired_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"canceled_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"failed_at\": \"2018-10-05T05:48:59Z\",\n\t\t\"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"symbol\": \"AAPL\",\n\t\t\"exchange\": \"NASDAQ\",\n\t\t\"asset_class\": \"us_equity\",\n\t\t\"qty\": \"15\",\n\t\t\"filled_qty\": \"0\",\n\t\t\"type\": \"market\",\n\t\t\"side\": \"buy\",\n\t\t\"time_in_force\": \"day\",\n\t\t\"limit_price\": \"107.00\",\n\t\t\"stop_price\": \"106.00\",\n\t\t\"filled_avg_price\": \"106.00\",\n\t\t\"status\": \"accepted\"\n\t}\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871666.75,
+			"method": "GET",
+			"modified": 1541538750995,
+			"name": "List All Open Orders",
+			"parameters": [
+				{
+					"id": "pair_4a99a8648cc44d69934a526eca463321",
+					"name": "status",
+					"value": "{{ status.open  }}"
+				},
+				{
+					"disabled": false,
+					"id": "pair_83e9c60cb9524aee81b175989e6180fd",
+					"name": "direction",
+					"value": "{{ direction.descending  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_f9d3908f621f4983bc5bd3b10fb26c88",
+					"name": "limit",
+					"value": "50"
+				},
+				{
+					"disabled": true,
+					"id": "pair_c1a0338a1a2b496a82d73bfa8986cb02",
+					"name": "after",
+					"value": "{% now 'iso-8601', '' %}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_496149e3c2b243c59c8978415d0d73ae",
+					"name": "until",
+					"value": "{% now 'iso-8601', '' %}"
+				}
+			],
+			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders",
+			"_type": "request"
+		},
+		{
+			"_id": "req_bd5724e46a2f49bf9f48cf806b72f1bc",
+			"authentication": {},
+			"body": {},
+			"created": 1540674198224,
+			"description": "### Example Response\n```\n[\n\t{\n\t\t\"account_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n\t\t\"symbol\": \"AAPL\",\n\t\t\"exchange\": \"NASDAQ\",\n\t\t\"asset_class\": \"us_equity\",\n\t\t\"avg_entry_price\": \"100.0\",\n\t\t\"qty\": \"5\",\n\t\t\"side\": \"long\",\n\t\t\"market_value\": \"600.0\",\n\t\t\"cost_basis\": \"500.0\",\n\t\t\"unrealized_pl\": \"100.0\",\n\t\t\"unrealized_plpc\": \"0.20\",\n\t\t\"unrealized_intraday_pl\": \"10.0\",\n\t\t\"unrealized_intraday_plpc\": \"0.0084\",\n\t\t\"current_price\": \"120.0\",\n\t\t\"lastday_price\": \"119.0\",\n\t\t\"change_today\": \"0.0084\"\n\t}\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871673,
+			"method": "GET",
+			"modified": 1541541832475,
+			"name": "Get All Open Positions",
+			"parameters": [],
+			"parentId": "fld_f336c7586b984d0aab72c53579befa3f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/positions",
+			"_type": "request"
+		},
+		{
+			"_id": "req_644d47d366f94dd4951f2691dcd8c8a8",
+			"authentication": {},
+			"body": {},
+			"created": 1540674253583,
+			"description": "### Example Response\n```\n{\n  \"account_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"symbol\": \"AAPL\",\n  \"exchange\": \"NASDAQ\",\n  \"asset_class\": \"us_equity\",\n  \"avg_entry_price\": \"100.0\",\n  \"qty\": \"5\",\n  \"side\": \"long\",\n  \"market_value\": \"600.0\",\n  \"cost_basis\": \"500.0\",\n  \"unrealized_pl\": \"100.0\",\n  \"unrealized_plpc\": \"0.20\",\n  \"unrealized_intraday_pl\": \"10.0\",\n  \"unrealized_intraday_plpc\": \"0.0084\",\n  \"current_price\": \"120.0\",\n  \"lastday_price\": \"119.0\",\n  \"change_today\": \"0.0084\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871660.5,
+			"method": "GET",
+			"modified": 1544651957423,
+			"name": "Get an Open Position",
+			"parameters": [],
+			"parentId": "fld_f336c7586b984d0aab72c53579befa3f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/positions/{symbol}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_24bd82f51ad248a1aca147af85cf1b03",
+			"authentication": {},
+			"body": {},
+			"created": 1540674339933,
+			"description": "### Example Response\n```\n[\n  {\n    \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n    \"asset_class\": \"us_equity\",\n    \"exchange\": \"NASDAQ\",\n    \"symbol\": \"AAPL\",\n    \"status\": \"active\",\n    \"tradable\": true\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871673,
+			"method": "GET",
+			"modified": 1540845280624,
+			"name": "Get All Assets",
+			"parameters": [
+				{
+					"id": "pair_97f968731f204ecaa661459df81415ab",
+					"name": "status",
+					"value": "{{ status.active  }}"
+				},
+				{
+					"id": "pair_3facda99af9c43799d5304f9fa797e8b",
+					"name": "asset_class",
+					"value": "{{ asset_class.us_equity  }}"
+				}
+			],
+			"parentId": "fld_8384a7ad0bf34376841a8cd2737747e2",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/assets",
+			"_type": "request"
+		},
+		{
+			"_id": "req_56f7af57bfdd44e1931c3241017c7b94",
+			"authentication": {},
+			"body": {},
+			"created": 1540674339940,
+			"description": "### Example Response\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"asset_class\": \"us_equity\",\n  \"exchange\": \"NASDAQ\",\n  \"symbol\": \"AAPL\",\n  \"status\": \"active\",\n  \"tradable\": true\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871660.5,
+			"method": "GET",
+			"modified": 1540685207164,
+			"name": "Get an Asset",
+			"parameters": [],
+			"parentId": "fld_8384a7ad0bf34376841a8cd2737747e2",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/assets/{symbol}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6933089f70b249109453720cb61ee00d",
+			"authentication": {},
+			"body": {},
+			"created": 1540674778331,
+			"description": "## Example Response\n**Account Entity**\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"status\": \"ACTIVE\",\n  \"currency\": \"USD\",\n  \"buying_power\": \"4000.32\",\n  \"cash\": \"4000.32\",\n  \"cash_withdrawable\": \"4000.32\",\n  \"portfolio_value\": \"4321.98\",\n  \"pattern_day_trader\": false,\n  \"trading_blocked\": false,\n  \"transfers_blocked\": false,\n  \"account_blocked\": false,\n  \"created_at\": \"2018-10-01T13:35:25Z\"\n}\n```\n\n### Account Status Values\n`ONBOARDING`\n\nThe account is onboarding.\n\n`SUBMISSION_FAILED`\n\nThe account application submission failed for some reason.\n\n`SUBMITTED`\n\nThe account application has been submitted for review.\n\n`ACCOUNT_UPDATED`\n\nThe account information is being updated.\n\n`APPROVAL_PENDING`\n\nThe final account approval is pending.\n\n`ACTIVE`\n\nThe account is active for trading.\n\n`REJECTED`\n\nThe account application has been rejected.",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871673,
+			"method": "GET",
+			"modified": 1544653052019,
+			"name": "Get Account Info",
+			"parameters": [],
+			"parentId": "fld_1754c48a05924784b339810320aae20f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/account",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2135cb119def4c098806e4a8b8bbe486",
+			"authentication": {},
+			"body": {},
+			"created": 1540674962992,
+			"description": "### Example Response\n```\n{\n  \"date\": \"2018-01-03\",\n  \"open\": \"09:30\",\n  \"close\": \"16:00\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871673,
+			"method": "GET",
+			"modified": 1540685165163,
+			"name": "Get the Calendar",
+			"parameters": [],
+			"parentId": "fld_abf94133f0d44f14a90715c80060d3b5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/calendar",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c68100f2d61843e38a28bec3ec992ee8",
+			"authentication": {},
+			"body": {},
+			"created": 1540675010595,
+			"description": "### Example Response\n```\n{\n  \"timestamp\": \"2018-04-01T12:00:00.000Z\",\n  \"is_open\": true,\n  \"next_open\": \"2018-04-01T12:00:00.000Z\",\n  \"next_close\": \"2018-04-01T12:00:00.000Z\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540589871673,
+			"method": "GET",
+			"modified": 1540685145495,
+			"name": "Get the Clock",
+			"parameters": [],
+			"parentId": "fld_1426470d694942b89c926768c1c14434",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/clock",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_15290a5d728244069c4e865b28378031",
+			"created": 1540678868511,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540678868511,
+			"modified": 1540678868511,
+			"name": "Polygon",
+			"parentId": "fld_bd91226f677e4325abebe1ced729b0f3",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_0dae4f98b58b47aaa45ed683707f7042",
+			"created": 1544651404657,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1544651404657,
+			"modified": 1544651404657,
+			"name": "Alpaca Data API",
+			"parentId": "fld_bd91226f677e4325abebe1ced729b0f3",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"created": 1540678873842,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540678873842,
+			"modified": 1540678873842,
+			"name": "Meta Data",
+			"parentId": "fld_15290a5d728244069c4e865b28378031",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_19c0868450464919a4ae91369df5a7be",
+			"created": 1540678909053,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540678909053,
+			"modified": 1540678909053,
+			"name": "Stocks / Equities",
+			"parentId": "fld_15290a5d728244069c4e865b28378031",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_f2cee97e8faa40fdb1797917845798d4",
+			"authentication": {},
+			"body": {},
+			"created": 1544651413689,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_e721014617c44c2982559781501b96af",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_4454f97b59054a0a985cdd442fc0cf35",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1544651413689,
+			"method": "GET",
+			"modified": 1544652020888,
+			"name": "1 Minute Bars",
+			"parameters": [
+				{
+					"id": "pair_6bba15f745b64ff7b061867a1e203e14",
+					"name": "symbols",
+					"value": "AAPL"
+				},
+				{
+					"id": "pair_b8fe7336bbf242a18c134cfe526ae668",
+					"name": "limit",
+					"value": "1"
+				},
+				{
+					"id": "pair_8fc2f98e047c4d4fa7a1e2086d477d30",
+					"name": "start",
+					"value": ""
+				},
+				{
+					"id": "pair_a93d3ce2b93c4187be4326bb7c6ca67c",
+					"name": "end",
+					"value": ""
+				},
+				{
+					"id": "pair_479736462a9a442e8e12585b43292543",
+					"name": "after",
+					"value": ""
+				},
+				{
+					"id": "pair_4d466f599ec24f57a45a84d110bc1dcd",
+					"name": "until",
+					"value": ""
+				}
+			],
+			"parentId": "fld_0dae4f98b58b47aaa45ed683707f7042",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ data_api_url  }}/bars/1Min",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c2732422ff0e4f56bf7913237d67371b",
+			"authentication": {},
+			"body": {},
+			"created": 1544651649123,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bc3e24d29f02479ebb38cb2065237b43",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_a3a022ef20914896babb87db6ee9db38",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1544521280030.5,
+			"method": "GET",
+			"modified": 1544652005912,
+			"name": "5 Minute Bars",
+			"parameters": [
+				{
+					"id": "pair_6bba15f745b64ff7b061867a1e203e14",
+					"name": "symbols",
+					"value": "AAPL"
+				},
+				{
+					"id": "pair_b8fe7336bbf242a18c134cfe526ae668",
+					"name": "limit",
+					"value": "1"
+				},
+				{
+					"id": "pair_8fc2f98e047c4d4fa7a1e2086d477d30",
+					"name": "start",
+					"value": ""
+				},
+				{
+					"id": "pair_a93d3ce2b93c4187be4326bb7c6ca67c",
+					"name": "end",
+					"value": ""
+				},
+				{
+					"id": "pair_479736462a9a442e8e12585b43292543",
+					"name": "after",
+					"value": ""
+				},
+				{
+					"id": "pair_4d466f599ec24f57a45a84d110bc1dcd",
+					"name": "until",
+					"value": ""
+				}
+			],
+			"parentId": "fld_0dae4f98b58b47aaa45ed683707f7042",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ data_api_url  }}/bars/5Min",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2374c60f5dac4384a2197d72fdcb9794",
+			"authentication": {},
+			"body": {},
+			"created": 1544651676550,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_fd7fe30b74ad4b2c9c9bd547bacb60bd",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_5476f093993a4d1ea3431954e4c0cca4",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1544456213201.25,
+			"method": "GET",
+			"modified": 1544652012392,
+			"name": "15 Minute Bars",
+			"parameters": [
+				{
+					"id": "pair_6bba15f745b64ff7b061867a1e203e14",
+					"name": "symbols",
+					"value": "AAPL"
+				},
+				{
+					"id": "pair_b8fe7336bbf242a18c134cfe526ae668",
+					"name": "limit",
+					"value": "1"
+				},
+				{
+					"id": "pair_8fc2f98e047c4d4fa7a1e2086d477d30",
+					"name": "start",
+					"value": ""
+				},
+				{
+					"id": "pair_a93d3ce2b93c4187be4326bb7c6ca67c",
+					"name": "end",
+					"value": ""
+				},
+				{
+					"id": "pair_479736462a9a442e8e12585b43292543",
+					"name": "after",
+					"value": ""
+				},
+				{
+					"id": "pair_4d466f599ec24f57a45a84d110bc1dcd",
+					"name": "until",
+					"value": ""
+				}
+			],
+			"parentId": "fld_0dae4f98b58b47aaa45ed683707f7042",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ data_api_url  }}/bars/15Min",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8721c73daaee42a9a993e28f72053aee",
+			"authentication": {},
+			"body": {},
+			"created": 1544651692181,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_45aeebd105c54fb9b6f82be372764232",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_b25b5090739b4741a97fadcf3b31407b",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1544423679786.625,
+			"method": "GET",
+			"modified": 1544652018743,
+			"name": "1 Day Bars",
+			"parameters": [
+				{
+					"id": "pair_6bba15f745b64ff7b061867a1e203e14",
+					"name": "symbols",
+					"value": "AAPL"
+				},
+				{
+					"id": "pair_b8fe7336bbf242a18c134cfe526ae668",
+					"name": "limit",
+					"value": "1"
+				},
+				{
+					"id": "pair_8fc2f98e047c4d4fa7a1e2086d477d30",
+					"name": "start",
+					"value": ""
+				},
+				{
+					"id": "pair_a93d3ce2b93c4187be4326bb7c6ca67c",
+					"name": "end",
+					"value": ""
+				},
+				{
+					"id": "pair_479736462a9a442e8e12585b43292543",
+					"name": "after",
+					"value": ""
+				},
+				{
+					"id": "pair_4d466f599ec24f57a45a84d110bc1dcd",
+					"name": "until",
+					"value": ""
+				}
+			],
+			"parentId": "fld_0dae4f98b58b47aaa45ed683707f7042",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ data_api_url  }}/bars/1D",
+			"_type": "request"
+		},
+		{
+			"_id": "req_24ba4a1ea05645bf9bfa9a32a3e8731c",
+			"authentication": {},
+			"body": {},
+			"created": 1540678502255,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n  \"logo\": \"https://s3.polygon.io/logos/aapl/logo.png\",\n  \"exchange\": \"Nasdaq Global Select\",\n  \"name\": \"Apple Inc.\",\n  \"symbol\": \"AAPL\",\n  \"listdate\": \"2018-10-27\",\n  \"cik\": \"0000320193\",\n  \"bloomberg\": \"EQ0010169500001000\",\n  \"figi\": \"string\",\n  \"lei\": \"HWUPKR0MPOU8FGXBT394\",\n  \"sic\": 3571,\n  \"country\": \"us\",\n  \"industry\": \"Computer Hardware\",\n  \"sector\": \"Technology\",\n  \"marketcap\": 815604985500,\n  \"employees\": 116000,\n  \"phone\": \"(408) 996-1010\",\n  \"ceo\": \"Tim Cook\",\n  \"url\": \"http://www.apple.com\",\n  \"description\": \"Apple Inc. designs, manufactures, and markets mobile communication and media devices, personal computers, and portable digital music players to consumers...\\n\",\n  \"similar\": [\n    \"MSFT\",\n    \"IBM\",\n    \"GOOGL\"\n  ],\n  \"tags\": [\n    \"Technology\",\n    \"Consumer Electronics\",\n    \"Computer Hardware\"\n  ],\n  \"updated\": \"2018-10-27T22:14:13.037Z\"\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873742,
+			"method": "GET",
+			"modified": 1544651560125,
+			"name": "Symbol Details",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols/{symbol}/company",
+			"_type": "request"
+		},
+		{
+			"_id": "req_82acbfaa66414d39a4474371493fbf28",
+			"authentication": {},
+			"body": {},
+			"created": 1540678646820,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"symbol\": \"AAPL\",\n    \"type\": \"Dividend income\",\n    \"exDate\": \"2016-11-03T04:00:00.000Z\",\n    \"paymentDate\": \"2016-11-03T04:00:00.000Z\",\n    \"recordDate\": \"2016-11-03T04:00:00.000Z\",\n    \"declaredDate\": \"2016-11-03T04:00:00.000Z\",\n    \"amount\": 0.57,\n    \"qualified\": \"Q\",\n    \"flag\": \"string\"\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873692,
+			"method": "GET",
+			"modified": 1540685077505,
+			"name": "Symbol Dividends",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols/{symbol}/dividends",
+			"_type": "request"
+		},
+		{
+			"_id": "req_74fb62bb838c40b6b14217c5aaa24327",
+			"authentication": {},
+			"body": {},
+			"created": 1540678694494,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"symbol\": \"AAPL\",\n    \"exDate\": \"2016-11-03T04:00:00.000Z\",\n    \"paymentDate\": \"2016-11-03T04:00:00.000Z\",\n    \"recordDate\": \"2016-11-03T04:00:00.000Z\",\n    \"declaredDate\": \"2016-11-03T04:00:00.000Z\",\n    \"ratio\": 0.142857,\n    \"tofactor\": 7,\n    \"forfactor\": 1\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873642,
+			"method": "GET",
+			"modified": 1540685078140,
+			"name": "Symbol Splits",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols/{symbol}/splits",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c30d08a5fda54366a93dc4055de7013d",
+			"authentication": {},
+			"body": {},
+			"created": 1540678729153,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"symbol\": \"AAPL\",\n    \"EPSReportDate\": \"2018-02-01T00:00:00.000Z\",\n    \"EPSReportDateStr\": \"2018-02-01\",\n    \"fiscalPeriod\": \"Q1 2018\",\n    \"fiscalEndDate\": \"2017-12-31T00:00:00.000Z\",\n    \"actualEPS\": 3.89,\n    \"consensusEPS\": 3.82,\n    \"estimatedEPS\": 3.82,\n    \"announceTime\": \"AMC\",\n    \"numberOfEstimates\": 9,\n    \"EPSSurpriseDollar\": 0.07,\n    \"yearAgo\": 3.36,\n    \"yearAgoChangePercent\": 16,\n    \"estimatedChangePercent\": 14\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873592,
+			"method": "GET",
+			"modified": 1540685078847,
+			"name": "Symbol Earnings",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols/{symbol}/earnings",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5b7de7d8ea2742129cc97aa86b83e049",
+			"authentication": {},
+			"body": {},
+			"created": 1540678754119,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"symbol\": \"AAPL\",\n    \"reportDate\": \"2017-12-31T00:00:00.000Z\",\n    \"reportDateStr\": \"2017-12-31\",\n    \"grossProfit\": 33912000000,\n    \"costOfRevenue\": 54381000000,\n    \"operatingRevenue\": 88293000000,\n    \"totalRevenue\": 88293000000,\n    \"operatingIncome\": 26274000000,\n    \"netIncome\": 20065000000,\n    \"researchAndDevelopment\": 3407000000,\n    \"operatingExpense\": 7638000000,\n    \"currentAssets\": 143810000000,\n    \"totalAssets\": 406794000000,\n    \"totalLiabilities\": 266595000000,\n    \"currentCash\": 27491000000,\n    \"currentDebt\": 18478000000,\n    \"totalCash\": 77153000000,\n    \"totalDebt\": 122400000000,\n    \"shareholderEquity\": 140199000000,\n    \"cashChange\": 7202000000,\n    \"cashFlow\": 28293000000,\n    \"operatingGainsLosses\": 0\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873542,
+			"method": "GET",
+			"modified": 1540685079597,
+			"name": "Symbol Financials",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols/{symbol}/earnings",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6b66012b13d947339db350eaf089c72e",
+			"authentication": {},
+			"body": {},
+			"created": 1540678786769,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"symbols\": [\n      \"MSFT\",\n      \"AAPL\",\n      \"IBM\"\n    ],\n    \"title\": \"Goldman in talks to finance iPhones - WSJ\",\n    \"url\": \"https://seekingalpha.com/news/3328826-goldman-talks-finance-iphones-wsj\",\n    \"source\": \"SeekingAlpha\",\n    \"summary\": \"Continuing its push into more traditional areas of consumer finance, Goldman Sachs (NYSE:GS) is reportedly in talks with Apple (NASDAQ:AAPL) to finance iPhone purchases.Buyers theoretically would be a...\",\n    \"image\": \"https://static.seekingalpha.com/assets/og_image_410-b8960ce31ec84f7f12dba11a09fc1849b69b234e0f5f39d7c62f46f8692e58a5.png\",\n    \"timestamp\": \"2018-02-07T12:48:47.000Z\",\n    \"keywords\": [\n      \"financial services\",\n      \"aapl\",\n      \"investing\",\n      \"bsiness news\",\n      \"mobile\"\n    ]\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873492,
+			"method": "GET",
+			"modified": 1540685080316,
+			"name": "Symbol News",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_160070c6bf984076be26c2beb3aa1cc1",
+					"name": "perpage",
+					"value": "50"
+				},
+				{
+					"disabled": true,
+					"id": "pair_6008ebfed6e14eae84c09b81d1b49fc7",
+					"name": "page",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols/{symbol}/news",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1c90f9d8136f4beb9005ea01e535a95e",
+			"authentication": {},
+			"body": {},
+			"created": 1540684893126,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"symbol\": \"AAPL\",\n    \"name\": \"Apple Inc.\",\n    \"type\": \"cs\",\n    \"isOTC\": false,\n    \"updated\": \"2018-02-05T05:21:28.437Z\",\n    \"url\": \"https://api.polygon.io/v1/meta/symbols/AAPL\"\n  },\n  {\n    \"symbol\": \"NVDA\",\n    \"name\": \"NVIDIA Corporation\",\n    \"type\": \"cs\",\n    \"isOTC\": false,\n    \"updated\": \"2018-02-05T05:21:28.437Z\",\n    \"url\": \"https://api.polygon.io/v1/meta/symbols/NVDA\"\n  },\n  {\n    \"symbol\": \"MINE\",\n    \"name\": \"Minerco, Inc.\",\n    \"type\": \"cs\",\n    \"isOTC\": true,\n    \"updated\": \"2018-02-05T05:21:28.437Z\",\n    \"url\": \"https://api.polygon.io/v1/meta/symbols/MINE\"\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678873792,
+			"method": "GET",
+			"modified": 1540685075003,
+			"name": "Symbols",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_9d27c7c252d84cb3a0b0fa5a6d0f71b0",
+					"name": "sort",
+					"value": "symbol"
+				},
+				{
+					"disabled": true,
+					"id": "pair_b09de923dbc742048fefe82c9f2f0d26",
+					"name": "type",
+					"value": "cs"
+				},
+				{
+					"id": "pair_3cf7eaaf8c8f46dfbc910137ffbe086e",
+					"name": "perpage",
+					"value": "50"
+				},
+				{
+					"id": "pair_f19c038510fc482d8b1baacd8c4f013d",
+					"name": "page",
+					"value": "1"
+				},
+				{
+					"disabled": true,
+					"id": "pair_4ccd138174dc451fa55f0d42a61a7b0e",
+					"name": "isOTC",
+					"value": "false"
+				}
+			],
+			"parentId": "fld_f9420ffaaf334c2d9607c53272c77b96",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/meta/symbols",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e41a65d8e6924dccb23205fa6f5057a7",
+			"authentication": {},
+			"body": {},
+			"created": 1540675972954,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n\t\"day\": \"2018-06-01\",\n\t\"map\": {\n\t\t\"aE\": \"askexchange\",\n\t\t\"aP\": \"askprice\",\n\t\t\"aS\": \"asksize\",\n\t\t\"bE\": \"bidexchange\",\n\t\t\"bP\": \"bidprice\",\n\t\t\"bS\": \"bidsize\",\n\t\t\"c\": \"condition\",\n\t\t\"t\": \"timestamp\"\n\t},\n\t\"msLatency\": 123,\n\t\"status\": \"success\",\n\t\"symbol\": \"SPY\",\n\t\"ticks\": [\n\t\t{\n\t\t\t\"c\": 0,\n\t\t\t\"bE\": \"0\",\n\t\t\t\"aE\": \"0\",\n\t\t\t\"t\": 1527811210243\n\t\t},\n\t\t{\n\t\t\t\"c\": 0,\n\t\t\t\"bE\": \"11\",\n\t\t\t\"aE\": \"11\",\n\t\t\t\"aP\": 273.4,\n\t\t\t\"aS\": 3,\n\t\t\t\"t\": 1527840000030\n\t\t},\n\t\t...\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678891447.5,
+			"method": "GET",
+			"modified": 1540685066596,
+			"name": "Historic Quotes",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/orders/last_quote/stocks/{symbol}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_cce867930c9745788e30fbafd09ade27",
+			"authentication": {},
+			"body": {},
+			"created": 1540678942326,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n  \"map\": {\n    \"a\": \"average\",\n    \"c\": \"close\",\n    \"h\": \"high\",\n    \"k\": \"transactions\",\n    \"l\": \"low\",\n    \"o\": \"open\",\n    \"t\": \"timestamp\",\n    \"v\": \"volume\"\n  },\n  \"status\": \"success\",\n  \"aggType\": \"second\",\n  \"symbol\": \"AAPL\",\n  \"ticks\": [\n    {\n      \"o\": 173.15,\n      \"c\": 173.2,\n      \"l\": 173.15,\n      \"h\": 173.21,\n      \"v\": 1800,\n      \"k\": 4,\n      \"t\": 1517529605000\n    }\n  ]\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678882594.75,
+			"method": "GET",
+			"modified": 1540685070661,
+			"name": "Historic Aggregates",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_fae41bca84be4e52b6a275c50322e49e",
+					"name": "from",
+					"value": "4-1-2018"
+				},
+				{
+					"disabled": true,
+					"id": "pair_7065d808482a4a9f9f49448182385e50",
+					"name": "to",
+					"value": "4-12-2018"
+				},
+				{
+					"disabled": true,
+					"id": "pair_664825f2f80548b291f66e8c4b004cf3",
+					"name": "limit",
+					"value": "100"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/historic/agg/{size}/{symbol}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_fa2c7b63ff014189978d464255415e4d",
+			"authentication": {},
+			"body": {},
+			"created": 1540679054034,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n  \"status\": \"success\",\n  \"symbol\": \"AAPL\",\n  \"last\": {\n    \"price\": 159.59,\n    \"size\": 20,\n    \"exchange\": 11,\n    \"cond1\": 14,\n    \"cond2\": 16,\n    \"cond3\": 0,\n    \"cond4\": 0,\n    \"timestamp\": 1518086464720\n  }\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678887021.125,
+			"method": "GET",
+			"modified": 1540685067822,
+			"name": "Last Trade for a Symbol",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/last/stocks/{symbol}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dd43bc244420424eb4b11971dbbfce9c",
+			"authentication": {},
+			"body": {},
+			"created": 1540679101866,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n  \"status\": \"success\",\n  \"symbol\": \"AAPL\",\n  \"last\": {\n    \"askprice\": 159.59,\n    \"asksize\": 2,\n    \"askexchange\": 11,\n    \"bidprice\": 159.45,\n    \"bidsize\": 20,\n    \"bidexchange\": 12,\n    \"timestamp\": 1518086601843\n  }\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678884807.9375,
+			"method": "GET",
+			"modified": 1540685068540,
+			"name": "Last Quote for a Symbol",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/last_quote/stocks/{symbol}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0178a8ae85674fb6a4cbbd47ceaf70fb",
+			"authentication": {},
+			"body": {},
+			"created": 1540679304132,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n  \"symbol\": \"AAPL\",\n  \"open\": {\n    \"condition1\": 14,\n    \"condition2\": 12,\n    \"condition3\": 0,\n    \"condition4\": 0,\n    \"exchange\": 12,\n    \"price\": 172.17,\n    \"size\": 50,\n    \"timestamp\": \"2018-03-05T14:30:00.080Z\"\n  },\n  \"close\": {\n    \"condition1\": 14,\n    \"condition2\": 12,\n    \"condition3\": 0,\n    \"condition4\": 0,\n    \"exchange\": 12,\n    \"price\": 172.17,\n    \"size\": 50,\n    \"timestamp\": \"2018-03-05T14:30:00.080Z\"\n  },\n  \"afterHours\": {\n    \"condition1\": 14,\n    \"condition2\": 12,\n    \"condition3\": 0,\n    \"condition4\": 0,\n    \"exchange\": 12,\n    \"price\": 172.17,\n    \"size\": 50,\n    \"timestamp\": \"2018-03-05T14:30:00.080Z\"\n  }\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678883701.3438,
+			"method": "GET",
+			"modified": 1540685069211,
+			"name": "Daily Open/Close",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"disabled": true,
+					"id": "pair_ccbadd8d9f414b2da6164f4bf98793a6",
+					"name": "date",
+					"value": "2018-3-2"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/open-close/{symbol}/{date}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4453c14676914a3997be6478302e32ce",
+			"authentication": {},
+			"body": {},
+			"created": 1540679397682,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n{\n  \"market\": \"open\",\n  \"serverTime\": \"2018-07-19T08:51:07-04:00\",\n  \"exchanges\": {\n    \"nyse\": \"open\",\n    \"nasdaq\": \"open\",\n    \"otc\": \"extended-hours\"\n  },\n  \"currencies\": {\n    \"fx\": \"open\",\n    \"crypto\": \"open\"\n  }\n}\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678891497.5,
+			"method": "GET",
+			"modified": 1540685118115,
+			"name": "Market Status",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/marketstatus/now",
+			"_type": "request"
+		},
+		{
+			"_id": "req_7d1d92d00757442784eac847e36e078f",
+			"authentication": {},
+			"body": {},
+			"created": 1540684785036,
+			"description": "All Alpaca Customers can access various kinds of market data in [Polygon](https://polygon.io/) using the Alpaca Trade API key ID (but the secret key is not required). For the RESTful interface, you need to give the `apiKey` parameter with the same API key ID, as demonstrated below.\n\nYou can query quotes, bars, and fundamentals data for both historical and real-time.\n\n### Example Response\n```\n[\n  {\n    \"exchange\": \"NYSE\",\n    \"name\": \"Thanksgiving Day\",\n    \"status\": \"early-close\",\n    \"date\": \"2018-11-23T00:00:00.000Z\",\n    \"open\": \"2018-11-23T09:30:00.000Z\",\n    \"close\": \"2018-11-23T13:00:00.000Z\"\n  }\n]\n```",
+			"headers": [
+				{
+					"id": "pair_10bc9dc29aca458a91a1b903d7fe791a",
+					"name": "APCA-API-KEY-ID",
+					"value": "{{ api_key  }}"
+				},
+				{
+					"id": "pair_8a1384f2ee4e4a9ea57483321faa81aa",
+					"name": "APCA-API-SECRET-KEY",
+					"value": "{{ api_secret  }}"
+				},
+				{
+					"id": "pair_c5cc72a71f394754a769211758802d7f",
+					"name": "Content-Type",
+					"value": "{{ content_type  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540678891472.5,
+			"method": "GET",
+			"modified": 1540685065480,
+			"name": "Market Holidays",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_f7034b2831dc41b7a04bf8266a29ae3c",
+					"name": "apiKey",
+					"value": "{{ api_key  }}"
+				}
+			],
+			"parentId": "fld_19c0868450464919a4ae91369df5a7be",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_url  }}/marketstatus/upcoming",
+			"_type": "request"
+		}
+	]
+}
