@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-12-12T22:22:29.264Z",
+	"__export_date": "2018-12-13T17:56:45.920Z",
 	"__export_source": "insomnia.desktop.app:v6.2.3",
 	"resources": [
 		{
@@ -28,7 +28,7 @@
 			},
 			"isPrivate": false,
 			"metaSortKey": 1540589832659,
-			"modified": 1544653051363,
+			"modified": 1544723732050,
 			"name": "New Environment",
 			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
 			"_type": "environment"
@@ -71,8 +71,6 @@
 				"time_in_force": {
 					"at_market_open": "opg",
 					"day": "day",
-					"fill_or_kill": "fok",
-					"fill_or_kill_partial": "ioc",
 					"good_until_canceled": "gtc"
 				},
 				"type": {
@@ -83,7 +81,7 @@
 				}
 			},
 			"metaSortKey": -1540672329350,
-			"modified": 1540674057526,
+			"modified": 1544723753293,
 			"name": "Orders",
 			"parentId": "wrk_9cb7394f73b344809294eb051f2a8969",
 			"_type": "request_group"
@@ -175,7 +173,7 @@
 			},
 			"isPrivate": false,
 			"metaSortKey": 1540655069527,
-			"modified": 1544652757991,
+			"modified": 1544723729841,
 			"name": "Paper Trading",
 			"parentId": "env_c8fb7ec53cef446f85494eeb7b925ebc",
 			"_type": "environment"
@@ -201,7 +199,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"symbol\": \"AAPL\",\n\t\"qty\": 10,\n\t\"side\": \"{{ side.buy  }}\",\n\t\"type\": \"{{ type.limit  }}\",\n\t\"limit_price\": \"220.00\",\n\t\"time_in_force\": \"{{ time_in_force.fill_or_kill  }}\"\n}"
+				"text": "{\n\t\"symbol\": \"AAPL\",\n\t\"qty\": 10,\n\t\"side\": \"{{ side.buy  }}\",\n\t\"type\": \"{{ type.limit  }}\",\n\t\"limit_price\": \"220.00\",\n\t\"time_in_force\": \"time_in_force\"\n}"
 			},
 			"created": 1540589871623,
 			"description": "Places a new order for the given account. An order request may be rejected if the account is not authorized for trading, or if the tradable balance is insufficient to fill the order.\n\n### Example Response\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"created_at\": \"2018-10-05T05:48:59Z\",\n  \"updated_at\": \"2018-10-05T05:48:59Z\",\n  \"submitted_at\": \"2018-10-05T05:48:59Z\",\n  \"filled_at\": \"2018-10-05T05:48:59Z\",\n  \"expired_at\": \"2018-10-05T05:48:59Z\",\n  \"canceled_at\": \"2018-10-05T05:48:59Z\",\n  \"failed_at\": \"2018-10-05T05:48:59Z\",\n  \"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"symbol\": \"AAPL\",\n  \"exchange\": \"NASDAQ\",\n  \"asset_class\": \"us_equity\",\n  \"qty\": \"15\",\n  \"filled_qty\": \"0\",\n  \"type\": \"market\",\n  \"side\": \"buy\",\n  \"time_in_force\": \"day\",\n  \"limit_price\": \"107.00\",\n  \"stop_price\": \"106.00\",\n  \"filled_avg_price\": \"106.00\",\n  \"status\": \"accepted\"\n}\n```",
@@ -225,7 +223,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540589871623,
 			"method": "POST",
-			"modified": 1544651551892,
+			"modified": 1544723792288,
 			"name": "Place Buy Order",
 			"parameters": [
 				{
@@ -294,7 +292,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540589871673,
 			"method": "GET",
-			"modified": 1541538749591,
+			"modified": 1544658175581,
 			"name": "List All Orders",
 			"parameters": [
 				{
@@ -342,7 +340,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"symbol\": \"AAPL\",\n\t\"qty\": 10,\n\t\"side\": \"{{ side.sell  }}\",\n\t\"type\": \"{{ type.limit  }}\",\n\t\"limit_price\": \"220.00\",\n\t\"time_in_force\": \"{{ time_in_force.fill_or_kill  }}\"\n}"
+				"text": "{\n\t\"symbol\": \"AAPL\",\n\t\"qty\": 10,\n\t\"side\": \"{{ side.sell  }}\",\n\t\"type\": \"{{ type.limit  }}\",\n\t\"limit_price\": \"220.00\",\n\t\"time_in_force\": \"{{ time_in_force.good_until_canceled  }}\"\n}"
 			},
 			"created": 1540673374484,
 			"description": "Places a new order for the given account. An order request may be rejected if the account is not authorized for trading, or if the tradable balance is insufficient to fill the order.\n\n### Example Response\n```\n{\n  \"id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"client_order_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"created_at\": \"2018-10-05T05:48:59Z\",\n  \"updated_at\": \"2018-10-05T05:48:59Z\",\n  \"submitted_at\": \"2018-10-05T05:48:59Z\",\n  \"filled_at\": \"2018-10-05T05:48:59Z\",\n  \"expired_at\": \"2018-10-05T05:48:59Z\",\n  \"canceled_at\": \"2018-10-05T05:48:59Z\",\n  \"failed_at\": \"2018-10-05T05:48:59Z\",\n  \"asset_id\": \"904837e3-3b76-47ec-b432-046db621571b\",\n  \"symbol\": \"AAPL\",\n  \"exchange\": \"NASDAQ\",\n  \"asset_class\": \"us_equity\",\n  \"qty\": \"15\",\n  \"filled_qty\": \"0\",\n  \"type\": \"market\",\n  \"side\": \"buy\",\n  \"time_in_force\": \"day\",\n  \"limit_price\": \"107.00\",\n  \"stop_price\": \"106.00\",\n  \"filled_avg_price\": \"106.00\",\n  \"status\": \"accepted\"\n}\n```",
@@ -366,7 +364,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1539743601850,
 			"method": "POST",
-			"modified": 1541538759055,
+			"modified": 1544723765941,
 			"name": "Place Sell Order",
 			"parameters": [],
 			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
@@ -405,7 +403,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1539743601800,
 			"method": "GET",
-			"modified": 1544651966398,
+			"modified": 1544658972763,
 			"name": "Get an Order",
 			"parameters": [],
 			"parentId": "fld_881f9797a4704f61b958785a9aa53727",
@@ -719,7 +717,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540589871673,
 			"method": "GET",
-			"modified": 1544653052019,
+			"modified": 1544657690796,
 			"name": "Get Account Info",
 			"parameters": [],
 			"parentId": "fld_1754c48a05924784b339810320aae20f",
